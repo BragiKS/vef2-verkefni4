@@ -11,7 +11,7 @@ export function Layout() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/teams">Teams</Link>
+            <Link to="/launch">Rocket Launches</Link>
           </li>
           <li>
             <Link to="/experiment">Crazy Experiment!</Link>
