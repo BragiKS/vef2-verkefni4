@@ -40,7 +40,9 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <Button onClick={handleSearch}>Search</Button>
+      <Button onClick={handleSearch} className="buttonSearchbar">
+        Search
+      </Button>
     </div>
   );
 };

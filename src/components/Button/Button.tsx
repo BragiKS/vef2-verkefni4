@@ -2,9 +2,14 @@ import './Button.css';
 
 type Props = {
   children: React.ReactNode;
+  className: string;
   onClick: () => void;
-}
+};
 
-export function Button({ children, onClick }: Props) {
-  return <button className="button" onClick={onClick}>{children}</button>
+export function Button({ children, className, onClick }: Props) {
+  return (
+    <button className={className} onClick={onClick}>
+      {children}
+    </button>
+  );
 }

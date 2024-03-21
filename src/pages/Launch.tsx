@@ -29,12 +29,13 @@ export function LaunchComponent() {
 
   return (
     <div>
-      <h2>{launch.name}</h2>
       {launch.image === null ? (
         <Rocket />
       ) : (
         <img src={launch.image} alt="Loading img..." />
       )}
+      <h3>{launch.mission.name}</h3>
+      <p>{launch.mission.description}</p>
     </div>
   );
 }

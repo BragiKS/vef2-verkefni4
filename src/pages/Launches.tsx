@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { Launch } from '../types';
 import SearchBar from '../components/SearchBar/SearchBar';
 import { Button } from '../components/Button/Button';
+import { ListItem } from '../components/ListItem/ListItem';
 import { List } from '../components/List/List';
+import { Container } from '../components/Container/Container';
 
 export function Launches() {
   const [launches, setLaunches] = useState<Launch[]>([]);
@@ -49,24 +51,33 @@ export function Launches() {
   }
 
   return (
-    <div>
+    <Container>
       <SearchBar onSearch={handleSearch} />
-      <ul>
+      <List>
         {launches.map((launch) => (
           <>
-            <List key={launch.id}>
+            <ListItem key={launch.id}>
               <Link className="link" to={`/launch/${launch.id}`}>
                 {launch.name}
               </Link>
-              <p>{launch.status.name}</p>
-            </List>
+            </ListItem>
           </>
         ))}
-      </ul>
-      {previousOffset && (
-        <Button onClick={handlePreviousClick}>Previous</Button>
-      )}
-      {nextOffset && <Button onClick={handleNextClick}>Next</Button>}
-    </div>
+      </List>
+      <div className="buttonContainer">
+        <Button
+          onClick={handlePreviousClick}
+          className={previousOffset ? 'buttonPaging' : 'buttonHide'}
+        >
+          Previous
+        </Button>
+        <Button
+          onClick={handleNextClick}
+          className={nextOffset ? 'buttonPaging' : 'buttonHide'}
+        >
+          Next
+        </Button>
+      </div>
+    </Container>
   );
 }

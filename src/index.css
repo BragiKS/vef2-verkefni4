@@ -1,5 +1,7 @@
 :root {
-  --color-button: #28e0e0;
+  --color-button: #54b3d6;
+  --color-background: #495a80;
+  --color-link: #54b3d6;
 }
 
 body {
@@ -9,36 +11,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-background);
+  font-size: 27px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-.link {
-  color: #000;
-  position: relative;
-  text-decoration: none;
-}
-
-.link::before {
-  background: hsl(45 100% 70%);
-  content: '';
-  inset: 0;
-  position: absolute;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.5s ease-in-out;
-  z-index: -1;
-}
-
-.link:hover::before {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-ul {
-  list-style-type: none; /* Removes default bullet points */
-  padding: 0;
 }

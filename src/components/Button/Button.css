@@ -1,5 +1,28 @@
-.button {
+.buttonSearchbar {
   border: none;
-  border-radius: 5px;
+  border-radius: 2px 2px 15px 15px;
   background-color: var(--color-button, #000);
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20vw;
+  justify-content: center;
+}
+
+.buttonPaging {
+  border: none;
+  background-color: var(--color-button);
+  padding-inline: 15px;
+  padding-block: 8px;
+  border-radius: 5px;
+}
+
+.buttonHide {
+  visibility: hidden;
+}
+
+button:hover {
+  cursor: pointer;
 }
