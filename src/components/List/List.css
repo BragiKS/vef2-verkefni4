@@ -1,0 +1,9 @@
+.list {
+  font-size: 16px; /* Adjust font size */
+  color: #333; /* Text color */
+  padding: 5px 10px; /* Padding around the list item */
+  margin-bottom: 5px; /* Spacing between list items */
+  background-color: #f0f0f0; /* Background color */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ccc; /* Border */
+}

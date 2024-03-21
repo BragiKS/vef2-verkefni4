@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet } from 'react-router-dom';
 
 export function Layout() {
   return (
@@ -12,12 +12,6 @@ export function Layout() {
           </li>
           <li>
             <Link to="/launch">Rocket Launches</Link>
-          </li>
-          <li>
-            <Link to="/experiment">Crazy Experiment!</Link>
-          </li>
-          <li>
-            <Link to="/nothing-here">Nothing Here</Link>
           </li>
         </ul>
       </nav>

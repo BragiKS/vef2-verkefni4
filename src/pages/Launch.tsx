@@ -1,20 +1,40 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useLaunches } from '../components/LaunchesContext/LaunchesContext';
+import { useState, useEffect } from 'react';
+import { ReactComponent as Rocket } from '../images/rocket.svg';
+import { Launch } from '../types';
 
 export function LaunchComponent() {
   const { id } = useParams();
-  const launches = useLaunches();
-  const launch = launches.find(l => l.id.toString() === id);
+  const [launch, setLaunch] = useState<Launch | null>(null);
+
+  useEffect(() => {
+    const fetchLaunch = async () => {
+      try {
+        const response = await fetch(
+          `https://lldev.thespacedevs.com/2.2.0/launch/${id}`
+        );
+        const launchData = await response.json();
+        setLaunch(launchData);
+      } catch (error) {
+        console.error('Error fetching launch:', error);
+      }
+    };
+
+    fetchLaunch();
+  }, [id]);
 
   if (!launch) {
-    return <div>Launch not found</div>;
+    return <div>Loading...</div>;
   }
 
   return (
     <div>
       <h2>{launch.name}</h2>
-      {/* Display other details of the launch */}
+      {launch.image === null ? (
+        <Rocket />
+      ) : (
+        <img src={launch.image} alt="Loading img..." />
+      )}
     </div>
   );
 }
